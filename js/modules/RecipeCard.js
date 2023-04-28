@@ -1,4 +1,5 @@
 export class RecipeCard {
+    static recipePage = 'recipe.html'
     constructor(params){
         this.info = params
     }
@@ -23,6 +24,7 @@ export class RecipeCard {
         let a = document.createElement('a')
         a.classList.add('result__link')
         a.innerText = 'Show more'
+        a.href = RecipeCard.recipePage + "?id=" + this.info.recipe.uri.slice(this.info.recipe.uri.indexOf('#') + 1);
         return a
     }
     renderCard(){
